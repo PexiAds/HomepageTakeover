@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#stage {
+  width: 100%;
+  height: 100%;
+  background: #3454D1;
+  position: absolute;
+}
+
+
+

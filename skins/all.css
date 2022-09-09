@@ -1,0 +1,44 @@
+
+/* @font-face {
+  font-family: "Flama-Black";
+  src:  url('https://static.pexi.nl/dpg/flama-black.otf') format('opentype'),
+        url('https://static.pexi.nl/dpg/flama-black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Flama-Book";
+  src:  url('https://static.pexi.nl/dpg/flama-book.otf') format('opentype'),
+        url('https://static.pexi.nl/dpg/flama-book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	outline: none;
+		cursor: pointer;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.hiddenOnload {
+	opacity: 0;
+}
+
+.logo {
+	position: absolute;
+	top:50%;
+	left:50%;
+	width:80px;
+	transform:translate(-50%, -50%)
+}
