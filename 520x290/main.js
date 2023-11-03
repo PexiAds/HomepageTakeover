@@ -1,19 +1,17 @@
-//scale the div with name #scale
 
 $( function () {
 	function hover(){
-		function hoverIn() {
-		}
-		//hover out animaties hier
-		function hoverOut() {	
-		}
-		//hover in en out functies worden aangeroepen bij hover op #stage
-		$('#stage').hover(hoverIn, hoverOut);
+		var hoverTimeline = gsap.timeline({paused:true})
+		    .to(".cta", {scale:1.1, duration:.6,ease: "back.inOut(3)"})
+		;
+		
+		$("#stage").mouseenter( function() {hoverTimeline.play();});
+		$("#stage").mouseleave( function() {hoverTimeline.reverse();});
 	}
 
 
 	var tl = new TimelineMax({delay: 0.4,  onComplete:hover, paused:true})
-		.to('.hiddenOnload',0.3, {opacity:1})
+		.to('.hiddenOnload',{opacity:1,duration:.3})
 
 	;
 

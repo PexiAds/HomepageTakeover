@@ -1,19 +1,16 @@
 $( function () {
 		function hover(){
-			function hoverIn() {
-
-			}
-			//hover out animaties hier
-			function hoverOut() {
-
-			}
-			//hover in en out functies worden aangeroepen bij hover op #stage
-			$('#stage').hover(hoverIn, hoverOut);
+			var hoverTimeline = gsap.timeline({paused:true})
+		
+			;
+			
+			$("#stage").mouseenter( function() {hoverTimeline.play();});
+			$("#stage").mouseleave( function() {hoverTimeline.reverse();});
 		}
 
 
 		var tl = new TimelineMax({delay: 0.4,  onComplete:hover, paused:true})
-			.to('.hiddenOnload',0.3, {opacity:1})
+			.to('.hiddenOnload',{opacity:1,duration:.3})
 
 		;
 
