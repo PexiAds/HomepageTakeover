@@ -21,7 +21,7 @@ body {
 	width: 768px;
 	height: 100px;
 	background: #3454D1;
-	position: absolute;
+	position: relative;
 	cursor: pointer;
 	overflow: hidden;
 	border:1px solid #efefef;
