@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <script src="https://static.pexi.nl/general/jquery.min.js"></script>
-  <script src="https://static.pexi.nl/pexi.js"></script>
+  <script src="https://static.pexi.nl/3.3/pexi.js"></script>
 
   <link rel="stylesheet" href="all.css">
   <link rel="stylesheet" href="top.css">
@@ -15,13 +15,20 @@
 	</script>
 </head>
 <body>
-
+  <div class="wallpaper"></div>
 	<div id="stage" class="hiddenOnload" onclick="pexi.click();">
     <img src="https://static.pexi.nl/logo.svg" class="logo">
 	</div>
 
   <script src="https://static.pexi.nl/general/gsap_3.9.1_min.js"></script>
   <script src="top.js"></script>
+  <script>
+		PEXI.skinsReady(function(){
+			PEXI.skinsWallpaper();
+
+      tl.play(); //TL in top.js
+		});
+	</script>
 </body>
 
 </html>

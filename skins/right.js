@@ -29,11 +29,6 @@ function setBottom() {
 }
 
 var tl;
-var play = 0;
-var sendingLoaded;
-var received_1 = false;
-var received_2 = false;
-var loaded_myself = false;
 $( function () {
 	setTimeout(function(){
 		setBottom()
@@ -54,43 +49,3 @@ $( function () {
 
 
 } );
-
-
-
-
-$(window).on("load", function(){
-	sendingLoaded = setInterval(function(){
-		loaded_myself = true;
-		checkClearInterval();
-		PEXI.message('right_loaded');
-	},50)
-})
-
-
-function checkClearInterval(){
-	if(received_1 && received_2 && loaded_myself){
-		clearInterval(sendingLoaded);
-		PEXI.message('ready_to_play');
-	}
-}
-
-PEXI.receiveMessages(function(){
-	if(data == 'received_right_loaded__top'){
-		received_1 = true
-		checkClearInterval()
-	} else if(data == 'received_right_loaded__left'){
-		received_2 = true
-		checkClearInterval()
-	} else if(data == 'left_loaded'){
-		PEXI.message('received_left_loaded__right');
-	} else if(data == 'top_loaded'){
-		PEXI.message('received_top_loaded__right');
-	} else if(data == 'ready_to_play'){
-		play++;
-		if(play == 3){
-			tl.play();
-		}
-	}
-});
-
-
